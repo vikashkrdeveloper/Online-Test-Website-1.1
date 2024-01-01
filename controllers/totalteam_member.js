@@ -7,11 +7,13 @@ const totalteam_member = async (req, res) => {
             datas.push({ _id: element._id, name: element.name, userid: element.userid, email: element.emailid, registration: element.registrationno })
 
         })
-        res.status(200).send(datas);
+        res.status(200).send(datas); 
+        return;
 
     } catch (error) {
         console.log('Some technical issue');
-        res.status(403).send("Some technical issue" + error)
+        res.status(403).send("Some technical issue" + error) 
+        return;
     }
 }
 module.exports = totalteam_member

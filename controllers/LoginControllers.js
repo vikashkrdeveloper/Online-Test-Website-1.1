@@ -15,17 +15,22 @@ const LoginControllers = async (req, res) => {
           const token = await finduserid.genratetokens();
           res.cookie("jwttokens", token);
           res.status(200).send("Login Sucessfully");
+          return;
         } else {
           res.status(402).send("Invalid login details");
+          return;
         }
       } else {
         res.status(402).send("Invalid login details");
+        return;
       }
     } else {
       res.status(500).send("All field require");
+      return;
     }
   } catch (error) {
     res.status(403).send("Some technical issue");
+    return;
   }
 };
 module.exports = LoginControllers;

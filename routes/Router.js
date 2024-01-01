@@ -21,10 +21,7 @@ const answerdatadeletedControlers = require('../controllers/answerdatadeletedCon
 const Totalparticipantdatadeletecontrollers = require('../controllers/Totalparticipantdatadeletecontrollers');
 const UserdataMiddleware = require('../middleware/UserdataMiddleware');
  
-
-
-
-
+ 
 router.get('/', HomeControllers);
 router.get('/users/data', UserdataMiddleware, UserdataControllers)
 router.get('/api/participant/question/answer', QuestionAnswerApiControllers)

@@ -9,10 +9,12 @@ const QuestiontatalcountAnswerApiControllers = async (req, res) => {
         const numbericalquestion=await database3.countDocuments();
         const totalparticipent=await database4.countDocuments();
         const datas={Answer,mcqquestion,numbericalquestion,totalparticipent};
-        res.status(200).send(datas);
+        res.status(200).send(datas); 
+        return;
 
     } catch (error) {
-        console.log('Some technical issue');
+        console.log('Some technical issue'); 
+        return;
     }
 }
 module.exports=QuestiontatalcountAnswerApiControllers;

@@ -9,20 +9,24 @@ const QuestionnumbericalControllers = async (req, res) => {
         if (questionname) {
             const findnum = await database.findOne({ questionnumber });
             if (findnum) {
-                res.status(401).send('Question number already exist');
+                res.status(401).send('Question number already exist'); 
+                return;
 
             } else {
                 const insertdata = await new database({ questionname, questionnumber });
                 await insertdata.save();
-                res.status(200).send('Done Question Added');
+                res.status(200).send('Done Question Added'); 
+                return;
             }
         } else {
-            res.status(500).send("All field require");
+            res.status(500).send("All field require"); 
+            return;
         }
 
     } catch (error) {
         console.log('Some technical issue');
-        res.status(403).send("Some technical issue");
+        res.status(403).send("Some technical issue"); 
+        return;
     }
 }
 

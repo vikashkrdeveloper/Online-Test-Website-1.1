@@ -4,16 +4,19 @@ const Totalparticipantdatadeletecontrollers = async (req, res) => {
         const id = req.params.id;
         if (id) {
             await database.deleteOne({ _id: id });
-            res.status(200).send("Deleted Sucessfully");
+            res.status(200).send("Deleted Sucessfully"); 
+            return;
 
         } else {
-            res.status(403).send('Some technical issue')
+            res.status(403).send('Some technical issue') 
+            return;
         }
 
     } catch (error) {
 
         console.log('Some technical issue' + error);
-        res.status(403).send('Some technical issue')
+        res.status(403).send('Some technical issue') 
+        return;
     }
 }
 module.exports = Totalparticipantdatadeletecontrollers;
