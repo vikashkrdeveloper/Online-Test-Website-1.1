@@ -1,5 +1,6 @@
+const path=require('path')
 const ErrorControllers = (req, res) => {
-    res.status(404).send('Page Not Found');
+    res.sendFile(path.join(__dirname,'./Error.html'))
     return;
 }
 
