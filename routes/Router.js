@@ -18,16 +18,18 @@ const LogOutControllers = require('../controllers/LogOutControllers');
 const questiondatadeletedControlers = require('../controllers/questiondatadeletedControlers');
 const questiondatamcqdeletedControlers = require('../controllers/questiondatamcqdeletedControlers');
 const answerdatadeletedControlers = require('../controllers/answerdatadeletedControlers');
+const QuestiontatalAttamptAnswerApiControllers = require('../controllers/QuestiontatalAttamptAnswerApiControllers');
 const Totalparticipantdatadeletecontrollers = require('../controllers/Totalparticipantdatadeletecontrollers');
 const UserdataMiddleware = require('../middleware/UserdataMiddleware');
- 
- 
+
+
 router.get('/', HomeControllers);
 router.get('/users/data', UserdataMiddleware, UserdataControllers)
 router.get('/api/participant/question/answer', QuestionAnswerApiControllers)
 router.get('/api/participant/question/answer/total/count', QuestiontatalcountAnswerApiControllers)
+router.get('/api/participant/question/answer/total/userid/:userid', QuestiontatalAttamptAnswerApiControllers)
 router.get('/api/contest/question-mcq', McqQuestionApiControllers)
-router.get('/api/contest/question-numerical/',  NumericalQuestionApiControllers)
+router.get('/api/contest/question-numerical/', NumericalQuestionApiControllers)
 router.get('/api/logout', LogOutControllers)
 router.get('/api/total-tems/members/', totalteam_member)
 router.post('/participants/registration', RegistrationControllers);
